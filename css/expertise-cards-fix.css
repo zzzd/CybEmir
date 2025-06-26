@@ -1,0 +1,124 @@
+/* Règles corrigées pour les cartes expertise - remplace les anciennes règles conflictuelles */
+
+/* Règles de base pour les cartes */
+.data-expertise-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Image toujours visible avec effet de flou et overlay de couleur secondaire */
+.data-expertise-card .hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* Image floue par défaut */
+    transition: filter 0.3s ease;
+    z-index: 1;
+    opacity: 1 !important; /* Force l'image à rester visible */
+}
+
+/* Overlay de couleur secondaire sur l'image */
+.data-expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(133, 201, 185, 0.4) 0%, rgba(133, 201, 185, 0.25) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Titre et flèche toujours visibles au-dessus de l'image avec ombre */
+.data-expertise-card h3,
+.data-expertise-card .card-arrow {
+    position: relative;
+    z-index: 2; /* Au-dessus de l'image */
+    color: #ffffff !important; /* Texte blanc pour être lisible */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important; /* Ombre portée pour meilleure lisibilité */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8)) !important; /* Ombre supplémentaire pour la flèche */
+}
+
+/* Suppression de toutes les anciennes règles qui pourraient faire disparaître l'image */
+.data-expertise-card:hover .hover-image {
+    filter: blur(0px); /* Image nette au hover */
+    opacity: 1 !important; /* Force l'image à rester visible */
+}
+
+/* Suppression de toute règle qui pourrait changer l'opacité de l'image */
+.data-expertise-card .hover-image,
+.data-expertise-card:hover .hover-image {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* ===== CARTES MOBILES ===== */
+
+/* Règles de base pour les cartes mobiles */
+.expertise-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Image de fond des cartes mobiles avec effet de flou et overlay de couleur secondaire */
+.expertise-card .card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* Image floue par défaut */
+    transition: filter 0.3s ease;
+    z-index: 1;
+    opacity: 1 !important; /* Force l'image à rester visible */
+}
+
+/* Overlay de couleur secondaire sur l'image mobile */
+.expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(133, 201, 185, 0.4) 0%, rgba(133, 201, 185, 0.25) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Contenu des cartes mobiles toujours visible au-dessus de l'image */
+.expertise-card .card-content {
+    position: relative;
+    z-index: 2; /* Au-dessus de l'image */
+}
+
+.expertise-card .card-content h3,
+.expertise-card .card-content .card-icon {
+    color: #ffffff !important; /* Texte blanc pour être lisible */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important; /* Ombre portée pour meilleure lisibilité */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8)) !important; /* Ombre supplémentaire pour l'icône */
+}
+
+/* Suppression de toutes les anciennes règles qui pourraient faire disparaître l'image */
+.expertise-card:hover .card-content h3,
+.expertise-card:hover .card-content .card-icon {
+    color: #ffffff !important; /* Force la couleur blanche */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important; /* Ombre maintenue au hover */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8)) !important; /* Ombre maintenue au hover */
+}
+
+/* Suppression de toute règle qui pourrait changer l'opacité de l'image */
+.expertise-card .card-bg,
+.expertise-card:hover .card-bg {
+    opacity: 1 !important;
+    visibility: visible !important;
+} 

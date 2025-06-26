@@ -1,0 +1,883 @@
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 80vh;
+    min-height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-section--small {
+    height: auto; /* Hauteur automatique */
+    min-height: 500px; /* Hauteur minimale réduite */
+    padding: 80px 0; /* Garder un peu de padding */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(52,142,219,0.18) 0%, rgba(52,142,219,0.12) 100%), linear-gradient(45deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease 0.2s;
+}
+
+.start-project-button {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.start-project-button:hover,
+.start-project-button:focus {
+    background-color: #fff;
+    color: #0b1a2a;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(255,255,255,0.2);
+}
+
+/* Content Sections */
+.content-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.content-section.bg-light {
+    background: #fff !important;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 800px;
+}
+
+/* Cards */
+.expertise-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expertise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.card-content {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.fade-up.active, .fade-up[data-aos='fade-up'].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Apparition accordéon */
+.pyramide-accordion {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.pyramide-accordion.active, .pyramide-accordion.aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Image expertise stylée */
+.data-expertise-img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1.5px 8px rgba(34,42,63,0.07);
+    object-fit: cover;
+    min-height: 320px;
+    max-height: 420px;
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.97);
+    transition: box-shadow 0.4s, transform 0.4s, filter 0.4s;
+}
+.data-expertise-img:hover {
+    box-shadow: 0 16px 48px rgba(0,0,0,0.13), 0 3px 16px rgba(34,42,63,0.10);
+    transform: scale(1.025);
+    filter: brightness(1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Uniformisation largeur container - plus large */
+.content-section > .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-sizing: border-box;
+}
+
+/* Accordéon style corporate sharp (inspiré screenshot) */
+.pyramide-accordion {
+    flex: 2 1 400px;
+    min-width: 320px;
+}
+.pyramide-accordion .accordion-item {
+    background: #fff;
+    border: 1px solid rgba(52, 142, 219, 0.15);
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    transform: translateY(0);
+}
+
+.pyramide-accordion .accordion-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(52, 142, 219, 0.02) 0%, rgba(52, 142, 219, 0.04) 100%);
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: none;
+}
+
+.pyramide-accordion .accordion-item:not(.active):hover {
+    background: linear-gradient(135deg, rgba(52, 142, 219, 0.02) 0%, rgba(52, 142, 219, 0.06) 100%);
+    border-color: rgba(52, 142, 219, 0.25);
+    box-shadow: 0 4px 12px rgba(52, 142, 219, 0.08), 0 2px 4px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+}
+
+.pyramide-accordion .accordion-item:not(.active):hover::before {
+    opacity: 1;
+}
+
+.pyramide-accordion .accordion-item.active {
+    background: linear-gradient(135deg, rgba(52, 142, 219, 0.04) 0%, rgba(52, 142, 219, 0.08) 100%);
+    border-color: rgba(52, 142, 219, 0.3);
+    box-shadow: 0 6px 20px rgba(52, 142, 219, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    animation: accordionActiveRefined 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pyramide-accordion .accordion-item.active::before {
+    opacity: 1;
+    background: linear-gradient(135deg, rgba(52, 142, 219, 0.06) 0%, rgba(52, 142, 219, 0.12) 100%);
+}
+
+.pyramide-accordion .accordion-title {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #2c3e50;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: none;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 0.01em;
+}
+
+.pyramide-accordion .accordion-item.active .accordion-title {
+    color: #1a5f7a;
+    font-weight: 600;
+    transform: scale(1.01);
+}
+
+.pyramide-accordion .accordion-title .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-right: 1.2rem;
+    color: #348edb;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: rgba(52, 142, 219, 0.06);
+    border-radius: 50%;
+    border: 1.5px solid rgba(52, 142, 219, 0.15);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.pyramide-accordion .accordion-title .icon::before,
+.pyramide-accordion .accordion-title .icon::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pyramide-accordion .accordion-title .icon::before {
+    width: 10px;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pyramide-accordion .accordion-title .icon::after {
+    width: 2px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pyramide-accordion .accordion-item.active .accordion-title .icon {
+    color: #fff;
+    background: linear-gradient(135deg, #348edb 0%, #2c7bb6 100%);
+    border-color: rgba(52, 142, 219, 0.3);
+    box-shadow: 0 3px 12px rgba(52, 142, 219, 0.3);
+    transform: rotate(45deg);
+}
+
+.pyramide-accordion .accordion-item.active .accordion-title .icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    opacity: 0;
+}
+
+.pyramide-accordion .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0 1.5rem;
+    font-size: 0.95rem;
+    color: #34495e;
+    font-weight: 400;
+    border-radius: 0 0 12px 12px;
+    box-shadow: none;
+    border-top: none;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(8px);
+    line-height: 1.6;
+}
+
+.pyramide-accordion .accordion-item.active .accordion-content {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    max-height: 300px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: contentSlideRefined 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Animations pour l'accordéon - version plus professionnelle */
+@keyframes accordionActiveRefined {
+    0% {
+        transform: translateY(-2px) scale(1);
+        box-shadow: 0 6px 20px rgba(52, 142, 219, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    50% {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 8px 24px rgba(52, 142, 219, 0.15), 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        transform: translateY(-2px) scale(1);
+        box-shadow: 0 6px 20px rgba(52, 142, 219, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+}
+
+@keyframes contentSlideRefined {
+    0% {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation pour l'icône lors du hover - version plus subtile */
+.pyramide-accordion .accordion-item:not(.active):hover .accordion-title .icon {
+    background: rgba(52, 142, 219, 0.12);
+    border-color: rgba(52, 142, 219, 0.25);
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .content-section > .container {
+        max-width: 100%;
+    }
+    .pyramide-flex {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .pyramide-img-wrapper {
+        margin-bottom: 2rem;
+    }
+    .pyramide-accordion {
+        min-width: 0;
+    }
+}
+@media (max-width: 700px) {
+    .content-section .container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .pyramide-accordion {
+        margin-top: 2rem;
+    }
+}
+
+/* Fond gris très clair pour section */
+.bg-light {
+    background: #f8f9fa;
+}
+
+/* Flex container pour pyramide + accordéon */
+.pyramide-flex {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+/* Colonne image pyramide */
+.pyramide-img-wrapper {
+    flex: 1 1 350px;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.pyramide-img {
+    max-width: 340px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .pyramide-flex {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .pyramide-img-wrapper {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Style texte section expertise (identique à l'accordéon) */
+.data-expertise-text-content {
+    flex: 2 1 0;
+    min-width: 0;
+    background: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+.data-expertise-text-content h2 {
+    color: #222a3f;
+    font-size: 2.6rem;
+    font-weight: 400;
+    line-height: 1.18;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+}
+.data-expertise-text-content p {
+    color: #757575;
+    font-size: 1.08rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 0;
+    letter-spacing: 0.01em;
+}
+@media (max-width: 700px) {
+    .data-expertise-text-content h2 {
+        font-size: 1.5rem;
+    }
+    .data-expertise-text-content p {
+        font-size: 0.98rem;
+    }
+}
+
+.hero-strategie-bg {
+    background-image: url('img/carousel/chantier2.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.expertise-flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 3rem;
+}
+
+.data-expertise-image-wrapper {
+    flex: 1 1 320px;
+    min-width: 220px;
+    max-width: 480px;
+    display: flex;
+    justify-content: center;
+}
+
+.data-expertise-img {
+    max-width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    object-fit: cover;
+    min-height: 320px;
+    max-height: 420px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .expertise-flex {
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .data-expertise-image-wrapper {
+        margin-top: 2rem;
+        max-width: 100%;
+    }
+    .data-expertise-img {
+        min-height: 180px;
+        max-height: 320px;
+    }
+}
+
+
+.pyramide-img-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pyramide-img-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.pyramide-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.accordion-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-title {
+    width: 100%;
+    padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+    text-align: left;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.3s ease;
+    gap: 1rem;
+}
+
+.accordion-title:hover {
+    background-color: #f8f9fa;
+}
+
+.accordion-title .icon {
+    margin-left: auto;
+    order: 2;
+}
+
+.accordion-title span, .accordion-title {
+    text-align: left !important;
+    justify-content: flex-start !important;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s ease;
+    padding: 0 1.2rem;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                padding 0.5s ease,
+                opacity 0.3s ease;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: none;
+    padding: 1.2rem;
+    opacity: 1;
+}
+
+.accordion-content p {
+    margin: 0;
+    line-height: 1.6;
+    padding-bottom: 1.5rem;
+}
+
+.accordion-item.active .accordion-title .icon {
+    transform: rotate(180deg);
+}
+
+/* Animation pour l'apparition de la pyramide */
+.pyramide-flex {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .pyramide-img-wrapper {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .accordion-title {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .accordion-content {
+        padding: 0 1rem;
+    }
+    
+    .accordion-item.active .accordion-content {
+        padding: 1rem;
+    }
+}
+
+.long-text-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    background-color: #0b1a2a; /* Fallback color */
+}
+
+.long-text-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/hex-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: 1;
+    filter: blur(2px) grayscale(50%);
+    transform: scale(1.1);
+}
+
+.long-text-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(11, 26, 42, 0.95) 0%, rgba(11, 26, 42, 0.85) 100%);
+    z-index: 2;
+}
+
+.long-text-section > .container {
+    position: relative;
+    z-index: 3;
+}
+
+.long-text-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.long-text-content {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 0 auto;
+    font-weight: 400;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+[data-aos="fade-up"].aos-animate .long-text-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+    .long-text-section .container {
+        padding: 0 12px;
+    }
+    .long-text-title {
+        font-size: 1.3rem;
+    }
+    .long-text-content {
+        font-size: 1rem;
+    }
+}
+
+.expertises-cards-section {
+    padding: 64px 0 48px 0;
+    background: #fff;
+}
+
+.expertises-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.expertise-card-link {
+    display: block;
+    text-decoration: none;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #e3f7fa;
+    box-shadow: 0 4px 24px rgba(52,142,219,0.07);
+    position: relative;
+    min-height: 420px;
+    transition: transform 0.18s cubic-bezier(0.4,0,0.2,1), box-shadow 0.18s;
+}
+.expertise-card-link:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(21, 57, 95, 0.2);
+}
+
+.expertise-card-motif {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 64px 28px 72px 28px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.expertise-card-motif::before {
+    content: '';
+    position: absolute;
+    top: -10px; left: -10px; right: -10px; bottom: -10px;
+    background-image: url('../img/fond_ruche.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -2;
+}
+
+.expertise-card-motif::after {
+    content: '';
+    position: absolute;
+    right: 0; bottom: 0; left: 0; top: 0;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(11, 26, 42, 0.85) 0%, rgba(11, 26, 42, 0.3) 60%, transparent 100%);
+    pointer-events: none;
+    transition: background 0.3s ease;
+}
+
+.expertise-card-motif h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    z-index: 1;
+    position: relative;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.expertise-arrow {
+    font-size: 2.5rem;
+    line-height: 1;
+    color: #fff;
+    z-index: 1;
+    position: relative;
+    align-self: flex-end;
+    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+.expertise-card-link:hover .expertise-arrow {
+    transform: translateX(5px);
+}
+
+@media (max-width: 700px) {
+    .expertises-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 15px;
+    }
+    .expertise-card-link {
+        min-height: 250px;
+    }
+    .expertise-card-motif {
+        padding: 32px 18px 40px 18px;
+    }
+
+    .expertise-card-motif h3 {
+        font-size: 1.1rem;
+    }
+
+    .expertise-arrow {
+        font-size: 2rem;
+    }
+}
+
+.content-section.bg-light .pyramide-img-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.content-section.bg-light .pyramide-img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(52,142,219,0.10);
+    object-fit: contain;
+    background: #f6fbff;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.content-section.bg-light .pyramide-img:hover {
+    box-shadow: 0 12px 48px rgba(52,142,219,0.16);
+    transform: scale(1.025);
+}
+
+@media (max-width: 900px) {
+    .content-section.bg-light .pyramide-img-wrapper {
+        max-width: 100%;
+    }
+    .content-section.bg-light .pyramide-img {
+        max-height: 260px;
+        border-radius: 12px;
+    }
+} 

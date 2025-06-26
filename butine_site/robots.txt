@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /save/
+Disallow: /js/
+Disallow: /css/
+
+# Sitemap location
+Sitemap: https://www.fastaiservices.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10 

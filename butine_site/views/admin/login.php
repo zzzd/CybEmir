@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // Si quelqu'un accède à ce fichier directement sans méthode POST
-    header("Location: /admin/index.php");
+    header("Location: /admin/admin.php");
     exit;
 }
 ?> 

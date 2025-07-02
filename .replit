@@ -1,4 +1,15 @@
 modules = ["web"]
+run = "php -S 0.0.0.0:8000"
 
 [nix]
 channel = "stable-24_05"
+
+[nix.deps]
+pkgs = ["php82"]
+
+[deployment]
+run = ["sh", "-c", "php -S 0.0.0.0:8000"]
+
+[[ports]]
+localPort = 8000
+externalPort = 80

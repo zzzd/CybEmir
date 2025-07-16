@@ -1,0 +1,47 @@
+RewriteEngine On
+
+# Permettre l'accès direct aux fichiers statiques dans le dossier public
+RewriteCond %{REQUEST_URI} ^/butine_site/public/
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule . - [L]
+
+# Rediriger toutes les autres requêtes vers index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
+
+# Sécurité : bloquer l'accès aux fichiers de configuration et core
+<FilesMatch "\.(php)$">
+    <If "%{REQUEST_URI} =~ m#^/butine_site/(core|config|controllers|includes)/#">
+        Order Allow,Deny
+        Deny from all
+    </If>
+</FilesMatch>
+
+# Bloquer l'accès direct au fichier de configuration
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Configuration MIME pour les fichiers statiques
+<IfModule mod_mime.c>
+    AddType text/css .css
+    AddType application/javascript .js
+    AddType image/png .png
+    AddType image/jpeg .jpg .jpeg
+    AddType image/gif .gif
+    AddType image/svg+xml .svg
+    AddType image/webp .webp
+</IfModule>
+
+# Cache pour les fichiers statiques
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>

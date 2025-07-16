@@ -70,11 +70,10 @@
                 
             </div>
             <div class="clients-grid" data-aos="fade-up" data-aos-delay="100">
-                <img src="img/logo-stellantis.png" alt="Stellantis - Partenaire de Butine Groupe en transformation digitale et solutions IA" loading="lazy">
-                <img src="img/logo-schneider.png" alt="Schneider Electric - Client de Butine Groupe en automatisation et intelligence artificielle" loading="lazy">
-                <img src="img/logo-bpvf.png" alt="Banque Populaire Val de France - Partenaire de Butine Groupe en solutions bancaires innovantes" loading="lazy">
-                <img src="img/logo-havelsan.png" alt="Havelsan - Client de Butine Groupe en solutions technologiques avancées" loading="lazy">
-                <img src="img/logo-snrb.png" alt="SNRB - Partenaire de Butine Groupe en transformation numérique" loading="lazy">
+                <img src="<?= img_url('logo-stellantis.png') ?>" alt="Stellantis - Partenaire de Butine Groupe en transformation digitale et solutions IA" loading="lazy">
+                <img src="<?= img_url('logo-schneider.png') ?>" alt="Schneider Electric - Client de Butine Groupe en automatisation et intelligence artificielle" loading="lazy">
+                <img src="<?= img_url('logo-bpvf.png') ?>"  alt="Havelsan - Client de Butine Groupe en solutions technologiques avancées" loading="lazy">
+                <img src="<?= img_url('logo-snrb.png') ?>" alt="SNRB - Partenaire de Butine Groupe en transformation numérique" loading="lazy">
             </div>
         </div>
     </section>
@@ -83,7 +82,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="img/butine_long_bg.png" alt="Butine Groupe Logo" class="footer-logo">
+                    <img src="<?= img_url('butine_long_bg.png') ?>" alt="Butine Groupe Logo" class="footer-logo">
                     <p>Transformez votre entreprise avec l'Intelligence Artificielle</p>
                 </div>
                 <div class="footer-section">

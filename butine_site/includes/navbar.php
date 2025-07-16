@@ -5,7 +5,7 @@
             <div class="nav-row">
                 <a href="index.php" class="logo">
                     <div class="logo-flex">
-                        <img src="img/butine_long_bg.png" alt="Butine Groupe">
+                        <img src="<?= img_url('butine_long_bg.png') ?>" alt="Butine Groupe Logo">
                     </div>
                 </a>
                 <ul class="nav-links">
@@ -46,7 +46,7 @@
             <div class="dropdown-content" id="expertises-dropdown">
                 <div class="expertise-grid">
                     <div class="expertise-category">
-                        <h4><a href="views/pubic/strategie.php" style="text-decoration: none; color: inherit;">Stratégie Data & IA</a></h4>
+                        <h4><a href="views/public/strategie.php" style="text-decoration: none; color: inherit;">Stratégie Data & IA</a></h4>
                         <ul class="expertise-list">
                             <li>Audit stratégique data & IA</li>
                             <li>Structuration de la gouvernance data</li>
@@ -55,7 +55,7 @@
                         </ul>
                     </div>
                     <div class="expertise-category">
-                    <h4><a href="views/pubic/conseil.php" style="text-decoration: none; color: inherit;">Conseil en stratégie data</a></h4>
+                    <h4><a href="views/public/conseil.php" style="text-decoration: none; color: inherit;">Conseil en stratégie data</a></h4>
                     <ul class="expertise-list">
                         <li>Clarification des besoins et des cas d'usage</li>
                         <li>Identification des opportunités à fort ROI</li>
@@ -64,7 +64,7 @@
                     </ul>
                 </div>
                     <div class="expertise-category">
-                        <h4><a href="views/pubic/iads.php" style="text-decoration: none; color: inherit;">Intelligence Artificielle & Data Science</a></h4>
+                        <h4><a href="views/public/iads.php" style="text-decoration: none; color: inherit;">Intelligence Artificielle & Data Science</a></h4>
                         <ul class="expertise-list">
                             <li>Modèles prédictifs & scoring</li>
                             <li>Analyse sémantique & NLP</li>
@@ -74,7 +74,7 @@
                         </ul>
                     </div>
                     <div class="expertise-category">
-                        <h4><a href="views/pubic/outils.php" style="text-decoration: none; color: inherit;">Développement d'outils sur mesure</a></h4>
+                        <h4><a href="views/public/outils.php" style="text-decoration: none; color: inherit;">Développement d'outils sur mesure</a></h4>
                         <ul class="expertise-list">
                             <li>Conception de solutions SaaS personnalisées</li>
                             <li>Intégration d'outils métiers</li>
@@ -83,7 +83,7 @@
                         </ul>
                     </div>
                     <div class="expertise-category">
-                        <h4><a href="views/pubic/automatisation.php" style="text-decoration: none; color: inherit;">Automatisation & Process Mining</a></h4>
+                        <h4><a href="views/public/automatisation.php" style="text-decoration: none; color: inherit;">Automatisation & Process Mining</a></h4>
                         <ul class="expertise-list">
                             <li>Cartographie des processus</li>
                             <li>Automatisation de tâches (RPA, scripts, API)</li>
@@ -92,7 +92,7 @@
                         </ul>
                     </div>
                     <div class="expertise-category">
-                        <h4><a href="views/pubic/bi-data-viz.php" style="text-decoration: none; color: inherit;">Business Intelligence & Dataviz</a></h4>
+                        <h4><a href="views/public/bi-data-viz.php" style="text-decoration: none; color: inherit;">Business Intelligence & Dataviz</a></h4>
                         <ul class="expertise-list">
                             <li>Conception de dashboards clairs & pertinents</li>
                             <li>KPI personnalisés</li>
@@ -101,7 +101,7 @@
                         </ul>
                     </div>
                     <div class="expertise-category">
-                        <h4><a href="views/pubic/qualite-donnees.php" style="text-decoration: none; color: inherit;">Collecte & Qualité des Données</a></h4>
+                        <h4><a href="views/public/qualite-donnees.php" style="text-decoration: none; color: inherit;">Collecte & Qualité des Données</a></h4>
                         <ul class="expertise-list">
                             <li>Structuration & normalisation des sources</li>
                             <li>Data pipelines & ingestion multi-canal</li>
@@ -110,7 +110,7 @@
                         </ul>
                     </div>
                     <div class="expertise-category">
-                        <h4><a href="views/pubic/formation.php" style="text-decoration: none; color: inherit;">Accompagnement & Formation</a></h4>
+                        <h4><a href="views/public/formation.php" style="text-decoration: none; color: inherit;">Accompagnement & Formation</a></h4>
                         <ul class="expertise-list">
                             <li>Formation à la data, à l'IA et à la Business Intelligence</li>
                             <li>Ateliers d'acculturation IA pour les équipes métiers et dirigeantes</li>
@@ -121,7 +121,7 @@
                 </div>
             </div>
             <div class="dropdown-content" id="enjeux-dropdown">
-                <div class="views/pubic/expertise-grid">
+                <div class="views/public/expertise-grid">
                     <div class="expertise-category">
                         <h4>Performance commerciale & pilotage digital</h4>
                     </div>
@@ -155,7 +155,7 @@
     <div id="mobile-curtain" class="mobile-curtain">
         <div class="mobile-curtain-content">
             <div class="mobile-curtain-header">
-                <img src="img/butine_long_bg.png" alt="Butine Groupe" class="mobile-curtain-logo">
+                <img src="<?= img_url('butine_long_bg.png') ?>" alt="Butine Groupe" class="mobile-curtain-logo">
                 <button id="mobile-curtain-close" class="mobile-curtain-close" aria-label="Fermer">
                     <i class="fas fa-times"></i>
                 </button>
@@ -187,14 +187,14 @@
                         </button>
                         <div class="mobile-dropdown-content">
                             <ul>
-                                <li><a href="views/pubic/strategie.php">Stratégie Data & IA</a></li>
-                                <li><a href="views/pubic/conseil.php">Conseil en stratégie data</a></li>
-                                <li><a href="views/pubic/iads.php">Intelligence Artificielle & Data Science</a></li>
-                                <li><a href="views/pubic/outils.php">Développement d'outils sur mesure</a></li>
-                                <li><a href="views/pubic/automatisation.php">Automatisation & Process Mining</a></li>
-                                <li><a href="views/pubic/bi-data-viz.php">Business Intelligence & Dataviz</a></li>
-                                <li><a href="views/pubic/qualite-donnees.php">Collecte & Qualité des Données</a></li>
-                                <li><a href="views/pubic/formation.php">Accompagnement & Formation</a></li>
+                                <li><a href="views/public/strategie.php">Stratégie Data & IA</a></li>
+                                <li><a href="views/public/conseil.php">Conseil en stratégie data</a></li>
+                                <li><a href="views/public/iads.php">Intelligence Artificielle & Data Science</a></li>
+                                <li><a href="views/public/outils.php">Développement d'outils sur mesure</a></li>
+                                <li><a href="views/public/automatisation.php">Automatisation & Process Mining</a></li>
+                                <li><a href="views/public/bi-data-viz.php">Business Intelligence & Dataviz</a></li>
+                                <li><a href="views/public/qualite-donnees.php">Collecte & Qualité des Données</a></li>
+                                <li><a href="views/public/formation.php">Accompagnement & Formation</a></li>
                             </ul>
                         </div>
                     </li>
@@ -212,7 +212,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="views/pubic/#contact" id="mobile-contact-button">Contact</a></li>
+                    <li><a href="views/public/#contact" id="mobile-contact-button">Contact</a></li>
                 </ul>
             </nav>
         </div>

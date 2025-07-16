@@ -1,7 +1,3 @@
-<?php
-// views/public/home.php
-?>
-
 <section class="hero">
     <div class="hero-inner-content-wrapper">
         <div class="hero-content">

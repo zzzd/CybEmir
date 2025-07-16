@@ -1,3 +1,7 @@
+<?php
+// views/public/home.php
+include('script.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

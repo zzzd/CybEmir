@@ -90,7 +90,7 @@
     <div class="maintenance-container">
         <div class="logo">
             <!-- Ajoutez votre logo ici si vous en avez un -->
-            <!-- <img src="public/img/logo.png" alt="Butine Groupe"> -->
+            <!-- <img src="<?= img_url('logo.png') ?>" alt="Butine Groupe"> -->
         </div>
 
         <div class="maintenance-icon">

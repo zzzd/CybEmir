@@ -1,6 +1,6 @@
 <?php
-// views/public/home.php
-include('script.php');
+// Inclure le fichier de configuration
+require_once __DIR__ . '/../../config.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -34,16 +34,16 @@ include('script.php');
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/expertise.css">
-    <link rel="stylesheet" href="css/contact-modal.css">
+    <link rel="stylesheet" href="<?= CSS_URL ?>style.css">
+    <link rel="stylesheet" href="<?= CSS_URL ?>expertise.css">
+    <link rel="stylesheet" href="<?= CSS_URL ?>expertise-cards-fix.css">
 </head>
 
 <body class="strategy-corp-tech-bg">
     <?php include 'navbar.php'; ?>
 
     <!-- Hero Section -->
-    <section class="hero-section hero-section--small" style="background-image: url('img/formation/formation_hero.png');">
+    <section class="hero-section hero-section--small" style="background-image: url('<?= BASE_URL ?>public/img/formation/formation_hero.png');">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">Accompagnement & Formation</h1>
@@ -66,7 +66,7 @@ include('script.php');
                 </p>
             </div>
             <div class="data-expertise-image-wrapper fade-up" data-aos="fade-left" data-aos-delay="200">
-                <img src="img/formation/expertise.png" alt="Expertise Butine Groupe" class="data-expertise-img">
+                <img src="<?= BASE_URL ?>public/img/formation/expertise.png" alt="Expertise Butine Groupe" class="data-expertise-img">
             </div>
         </div>
     </section>
@@ -79,7 +79,7 @@ include('script.php');
             <!-- Pyramide (image btp.png) -->
             <div class="data-expertise-image-wrapper fade-up" data-aos="fade-left" data-aos-delay="200">
             <div class="pyramide-img-wrapper">
-                <img src="/img/formation/accordeon.png" alt="Pyramide Data" class="pyramide-img">
+                <img src="<?= BASE_URL ?>public/img/formation/accordeon.png" alt="Pyramide Data" class="pyramide-img">
             </div>
             </div>
             <!-- Accordéon -->
@@ -134,25 +134,25 @@ Notre objectif : que vos collaborateurs soient capables de comprendre, utiliser,
     <!-- Section Expertises -->
     <section class="expertises-cards-section">
         <div class="container expertises-cards-grid">
-            <a href="/strategie.php" class="expertise-card-link" data-aos="fade-up" data-aos-anchor=".expertises-cards-section">
+            <a href="<?= BASE_URL ?>strategie" class="expertise-card-link" data-aos="fade-up" data-aos-anchor=".expertises-cards-section">
                 <div class="expertise-card-motif">
                     <h3>Stratégie Data & IA</h3>
                     <span class="expertise-arrow">→</span>
                 </div>
             </a>
-            <a href="/iads.php" class="expertise-card-link" data-aos="fade-up" data-aos-delay="100" data-aos-anchor=".expertises-cards-section">
+            <a href="<?= BASE_URL ?>iads" class="expertise-card-link" data-aos="fade-up" data-aos-delay="100" data-aos-anchor=".expertises-cards-section">
                 <div class="expertise-card-motif">
                     <h3>Intelligence Artificielle & Data Science</h3>
                     <span class="expertise-arrow">→</span>
                 </div>
             </a>
-            <a href="/automatisation.php" class="expertise-card-link" data-aos="fade-up" data-aos-delay="200" data-aos-anchor=".expertises-cards-section">
+            <a href="<?= BASE_URL ?>automatisation" class="expertise-card-link" data-aos="fade-up" data-aos-delay="200" data-aos-anchor=".expertises-cards-section">
                 <div class="expertise-card-motif">
                     <h3>Automatisation & Process Mining</h3>
                     <span class="expertise-arrow">→</span>
                 </div>
             </a>
-            <a href="/bi-data-viz.php" class="expertise-card-link" data-aos="fade-up" data-aos-delay="300" data-aos-anchor=".expertises-cards-section">
+            <a href="<?= BASE_URL ?>bi-data-viz" class="expertise-card-link" data-aos="fade-up" data-aos-delay="300" data-aos-anchor=".expertises-cards-section">
                 <div class="expertise-card-motif">
                     <h3>Business Intelligence & Dataviz</h3>
                     <span class="expertise-arrow">→</span>
@@ -163,7 +163,7 @@ Notre objectif : que vos collaborateurs soient capables de comprendre, utiliser,
 
     <?php include 'footer.php'; ?>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/expertise.js"></script>
+    <script src="<?= BASE_URL ?>public/js/main.js"></script>
+    <script src="<?= BASE_URL ?>public/js/expertise.js"></script>
 </body>
-</html> 
+</html>

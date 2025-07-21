@@ -1,3 +1,7 @@
+<?php
+// Inclure le fichier de configuration
+require_once __DIR__ . '/../../config.php';
+?>
 <section class="hero">
     <div class="hero-inner-content-wrapper">
         <div class="hero-content">

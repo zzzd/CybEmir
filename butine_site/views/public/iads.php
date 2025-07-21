@@ -1,6 +1,6 @@
 <?php
-// views/public/home.php
-include('script.php');
+// Inclure le fichier de configuration
+require_once __DIR__ . '/../../config.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">

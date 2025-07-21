@@ -2,6 +2,21 @@
 // Inclure le fichier de configuration
 require_once __DIR__ . '/../../config.php';
 ?>
+<?php
+// Debug
+echo "BASE_URL définie : " . (defined('BASE_URL') ? 'OUI' : 'NON') . "<br>";
+echo "CSS_URL définie : " . (defined('CSS_URL') ? 'OUI' : 'NON') . "<br>";
+echo "Chemin du fichier actuel : " . __FILE__ . "<br>";
+echo "Dossier du fichier : " . __DIR__ . "<br>";
+
+// Inclure le config si pas encore fait
+if (!defined('BASE_URL')) {
+    require_once __DIR__ . '/../../config.php';
+}
+
+// Vérifier après inclusion
+echo "Après inclusion - CSS_URL : " . (defined('CSS_URL') ? CSS_URL : 'NON DÉFINIE') . "<br>";
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -40,7 +55,6 @@ require_once __DIR__ . '/../../config.php';
 </head>
 
 <body class="strategy-corp-tech-bg">
-    <?php include 'navbar.php'; ?>
 
     <!-- Hero Section -->
     <section class="hero-section hero-section--small" style="background-image: url('<?= BASE_URL ?>public/img/formation/formation_hero.png');">
